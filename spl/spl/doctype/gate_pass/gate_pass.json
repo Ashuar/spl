@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:GP-{MM}-{YY}-{#####}",
+ "creation": "2024-11-12 20:53:34.762566",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_jato",
+  "amended_from",
+  "vehicle_no",
+  "type",
+  "column_break_ejpk",
+  "driver_name",
+  "gate_pass_detail_section",
+  "gate_pass_detail"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_jato",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gate Pass",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "fieldname": "column_break_ejpk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "IGP\nOGP\nRGP"
+  },
+  {
+   "fieldname": "gate_pass_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Gate Pass Detail"
+  },
+  {
+   "fieldname": "gate_pass_detail",
+   "fieldtype": "Table",
+   "label": "Gate Pass Detail",
+   "options": "Gate Pass Item",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-12 21:33:44.415863",
+ "modified_by": "Administrator",
+ "module": "SPL",
+ "name": "Gate Pass",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
