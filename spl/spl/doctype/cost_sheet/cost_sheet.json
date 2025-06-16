@@ -1,13 +1,73 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2025-05-22 17:26:35.304595",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_bv5b",
+  "naming_series",
+  "sample_code",
+  "size_range",
+  "customer_article",
+  "column_break_logg",
+  "transaction_date",
+  "posting_time",
+  "status",
+  "sample_image",
+  "column_break_gswx",
   "amended_from",
-  "sample_no"
+  "construction",
+  "currency",
+  "price",
+  "upper_component_section",
+  "item",
+  "section_break_mrke",
+  "column_break_mrfp",
+  "column_break_bwkm",
+  "upper_total",
+  "linings",
+  "lining_item",
+  "section_break_lmca",
+  "column_break_hqbb",
+  "column_break_aspl",
+  "lining_total",
+  "accessories_section",
+  "accessories_item",
+  "section_break_qhdu",
+  "column_break_pfpg",
+  "column_break_xrxh",
+  "accessory_total",
+  "bottom_section",
+  "bottom_item",
+  "section_break_dsqb",
+  "column_break_glgg",
+  "column_break_uujk",
+  "bottom_total",
+  "chemical_section",
+  "chemical_item",
+  "section_break_jime",
+  "column_break_qmuf",
+  "column_break_zezz",
+  "chemical_total",
+  "section_break_mqup",
+  "column_break_dnau",
+  "total_material_cost",
+  "column_break_abnh",
+  "tooling_cost_section",
+  "tooling_cost",
+  "section_break_ptjl",
+  "column_break_wcwx",
+  "column_break_xhzc",
+  "total_tooling_cost",
+  "section_break_wdln",
+  "labor_cost",
+  "section_break_zifc",
+  "column_break_bhoz",
+  "column_break_eyii",
+  "total_labor_cost",
+  "grand_total_cost"
  ],
  "fields": [
   {
@@ -25,19 +85,336 @@
    "search_index": 1
   },
   {
-   "fieldname": "sample_no",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Sample No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_logg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gswx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_article",
    "fieldtype": "Data",
-   "label": "Sample No"
+   "label": "Customer Article",
+   "reqd": 1
+  },
+  {
+   "fieldname": "construction",
+   "fieldtype": "Data",
+   "label": "Construction"
+  },
+  {
+   "fieldname": "size_range",
+   "fieldtype": "Data",
+   "label": "Size Range",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Price"
+  },
+  {
+   "fieldname": "upper_component_section",
+   "fieldtype": "Section Break",
+   "label": "Upper Component"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Table",
+   "label": "Item",
+   "options": "Cost Sheet Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "linings",
+   "fieldtype": "Section Break",
+   "label": "Linings"
+  },
+  {
+   "fieldname": "lining_item",
+   "fieldtype": "Table",
+   "label": "Lining Item",
+   "options": "Cost Sheet Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mrke",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "upper_total",
+   "fieldtype": "Currency",
+   "label": "Upper Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_mrfp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bwkm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_lmca",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hqbb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aspl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "lining_total",
+   "fieldtype": "Currency",
+   "label": "Lining Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "accessories_section",
+   "fieldtype": "Section Break",
+   "label": "Accessories"
+  },
+  {
+   "fieldname": "accessories_item",
+   "fieldtype": "Table",
+   "label": "Accessories Item",
+   "options": "Cost Sheet Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bottom_section",
+   "fieldtype": "Section Break",
+   "label": "Bottom"
+  },
+  {
+   "fieldname": "bottom_item",
+   "fieldtype": "Table",
+   "label": "Bottom Item",
+   "options": "Cost Sheet Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_qhdu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pfpg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xrxh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "accessory_total",
+   "fieldtype": "Currency",
+   "label": "Accessory Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_dsqb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_glgg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uujk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "bottom_total",
+   "fieldtype": "Currency",
+   "label": "Bottom Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "chemical_section",
+   "fieldtype": "Section Break",
+   "label": "Chemical"
+  },
+  {
+   "fieldname": "chemical_item",
+   "fieldtype": "Table",
+   "label": "Chemical Item",
+   "options": "Cost Sheet Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_jime",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qmuf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zezz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "chemical_total",
+   "fieldtype": "Currency",
+   "label": "Chemical Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mqup",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_dnau",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_abnh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "total_material_cost",
+   "fieldtype": "Read Only",
+   "label": "Total Material Cost"
+  },
+  {
+   "fieldname": "tooling_cost_section",
+   "fieldtype": "Section Break",
+   "label": "Tooling Cost"
+  },
+  {
+   "fieldname": "tooling_cost",
+   "fieldtype": "Table",
+   "label": "Tooling Cost",
+   "options": "Tooling Cost"
+  },
+  {
+   "fieldname": "section_break_ptjl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wcwx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xhzc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_tooling_cost",
+   "fieldtype": "Currency",
+   "label": "Total Tooling Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wdln",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "labor_cost",
+   "fieldtype": "Table",
+   "label": "Labor Cost",
+   "options": "Labor Cost"
+  },
+  {
+   "fieldname": "section_break_zifc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bhoz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_eyii",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "total_labor_cost",
+   "fieldtype": "Currency",
+   "label": "Total Labor Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Grand Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sample_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sample Code",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nCutting\nStitching\nLasting\nFinished",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sample_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Sample Image"
   }
  ],
  "grid_page_length": 50,
+ "image_field": "sample_image",
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-22 17:26:49.089254",
+ "modified": "2025-05-27 15:53:10.751595",
  "modified_by": "Administrator",
  "module": "SPL",
  "name": "Cost Sheet",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -57,5 +434,7 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "sample_code",
+ "track_changes": 1
 }
